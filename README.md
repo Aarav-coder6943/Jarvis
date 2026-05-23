@@ -148,28 +148,376 @@ ollama pull llama3.1
 Start Ollama:
 
 ollama serve
-🚀 Run J.A.R.V.I.S.
-python jarvis.py
-🎙️ Example Commands
-Applications
-open chrome
-launch vscode
-close spotify
-Websites
+
+FOR BEST USE CASES AND BEST IMPLEMENTATION, DOWNLOAD jarvis_JARVIS.zip and extract it, then make a virtual environment in that folder
+
+cd jarvis_JARVIS 
+cd jarvis
+python -m venv jarvis_env
+jarvis_env/Scripts/activate
+
+OR create a startup batch file
+
+cd your_project_path
+call jarvis_env\Scripts\activate
+python jarvis_backend.py (OR python setup_and_run.py)
+
+AND set this as startup application
+This will now launch jarvis as soon as you power om your device
+
+
+
+🎙️ COMPLETE LIST OF USER COMMANDS
+
+This version of J.A.R.V.I.S. has a LOT of commands now.
+I grouped them by category so your brain doesn’t combust 💀
+
+🧠 SYSTEM / HUD COMMANDS
+
+These show system diagnostics.
+
+Commands:
+“hud”
+“dashboard”
+“status”
+“diagnostic”
+“how are you”
+“system check”
+“run a check”
+What happens:
+
+Shows:
+
+CPU
+RAM
+Disk
+Battery
+Time
+Hostname
+⚙️ PROCESS MONITOR COMMANDS
+Commands:
+“top processes”
+“process list”
+“what’s running”
+“running processes”
+“process monitor”
+What happens:
+
+Displays top CPU-consuming apps.
+
+🔋 BATTERY COMMANDS
+Commands:
+“battery”
+“battery status”
+“how much battery”
+What happens:
+
+Speaks:
+
+battery %
+charging state
+🕒 TIME COMMANDS
+Commands:
+“what time is it”
+“tell me the time”
+“current time”
+📅 DATE COMMANDS
+Commands:
+“what day is it”
+“what’s today’s date”
+“the date”
+🌦️ WEATHER COMMANDS
+Commands:
+“weather”
+“weather Delhi”
+“weather in Mumbai”
+“weather for London”
+What happens:
+
+Uses:
+
+wttr.in
+
+No API key needed.
+
+📝 NOTES COMMANDS
+Add Note
+Commands:
+note add physics / revise chapter 5
+
+or
+
+note: physics / revise vectors
+List Notes
+Commands:
+“note list”
+“notes”
+“show notes”
+“my notes”
+Read Note
+Commands:
+note read physics
+Delete Note
+Commands:
+note delete physics
+
+or
+
+note remove physics
+⏰ REMINDER COMMANDS
+Reminder by Minutes
+Commands:
+remind me in 10 minutes drink water
+remind me in 2 hours do homework
+Reminder by Clock Time
+Commands:
+remind me at 15:30 meeting
+List Reminders
+Commands:
+“list reminders”
+“show reminders”
+“pending reminders”
+“my reminders”
+📋 CLIPBOARD COMMANDS
+Copy Text
+Commands:
+copy hello world
+Clipboard History
+Commands:
+“clipboard history”
+“show clipboard”
+“paste history”
+🧩 ALIAS COMMANDS
+Create Alias
+Commands:
+alias yt = go to youtube
+
+Then:
+
+yt
+
+automatically runs:
+
 go to youtube
-browse github
-search for machine learning
-Sessions
+List Aliases
+Commands:
+“alias list”
+“list aliases”
+“show aliases”
+💻 APP COMMANDS
+Open Apps
+Commands:
+“open chrome”
+“launch vscode”
+“start spotify”
+“run discord”
+
+Supported launch verbs:
+
+open
+launch
+start
+run
+Close Apps
+Commands:
+“close chrome”
+“kill discord”
+“terminate spotify”
+“quit steam”
+
+Supported close verbs:
+
+close
+kill
+terminate
+quit
+🌐 WEBSITE COMMANDS
+Open Website
+Commands:
+“go to youtube”
+“browse github”
+“open website reddit”
+Search Google
+Commands:
+search for quantum physics
+💾 SESSION COMMANDS
+Save Session
+Commands:
 save session coding
+Load Session
+Commands:
 load session coding
-Notes
-note add math / revise trigonometry
-note list
-Reminders
-remind me in 15 minutes drink water
-AI
-explain black holes
-write a python sorting algorithm
+
+or
+
+restore session coding
+List Sessions
+Commands:
+“list sessions”
+“show sessions”
+“what sessions”
+Restore Last Session
+Commands:
+“wake up”
+“restore last”
+🧮 MATH COMMANDS
+Percentage Math
+Commands:
+15 percent of 340
+General Calculations
+Commands:
+calculate 24 * 7
+what is 55 plus 44
+compute 45 divided by 9
+
+Supports:
+
+plus
+minus
+times
+multiplied by
+divided by
+squared
+cubed
+🔊 VOLUME COMMANDS
+Volume Up
+Commands:
+“volume up”
+“turn up”
+“louder”
+Volume Down
+Commands:
+“volume down”
+“turn down”
+“quieter”
+Mute
+Commands:
+“mute”
+“mute audio”
+“silence”
+“mute the volume”
+📸 SCREENSHOT COMMANDS
+Commands:
+“screenshot”
+“capture screen”
+What happens:
+
+Saves screenshot to desktop.
+
+⚡ POWER COMMANDS
+Shutdown Computer
+Commands:
+“shutdown computer”
+“shut down the computer”
+Restart Computer
+Commands:
+“restart computer”
+“restart the computer”
+Sleep Computer
+Commands:
+“sleep computer”
+“sleep system”
+“sleep pc”
+“sleep laptop”
+🎭 FUN COMMANDS
+Tony Stark Quotes
+Commands:
+“quote”
+“tony stark”
+Jokes
+Commands:
+“joke”
+“tell me a joke”
+Coin Flip
+Commands:
+“flip a coin”
+“coin flip”
+Dice Roll
+Commands:
+“roll a die”
+“roll a 20 sided die”
+“roll dice”
+👋 GREETING COMMANDS
+Commands:
+“hello”
+“hi there”
+“hey jarvis”
+🙏 THANK YOU COMMANDS
+Commands:
+“thank you”
+“thanks”
+🔄 MODE SWITCH COMMANDS
+Switch to Voice Mode
+Commands:
+“voice mode”
+“switch to voice”
+Switch to Text Mode
+Commands:
+“text mode”
+“type mode”
+“switch to text”
+🔇 TTS CONTROL COMMANDS
+Mute Jarvis Voice
+Commands:
+“mute jarvis”
+“stop talking”
+“be quiet”
+Unmute Jarvis
+Commands:
+“unmute jarvis”
+“start talking”
+“speak again”
+🚪 EXIT COMMANDS
+Commands:
+“good night”
+“go offline”
+“shutdown jarvis”
+“power down”
+“goodbye jarvis”
+“exit”
+“quit”
+🤖 AI FALLBACK COMMANDS
+
+This is the coolest part.
+
+ANYTHING unknown automatically gets sent to Ollama AI.
+
+Example:
+
+Jarvis explain quantum entanglement
+Jarvis write a python sorting algorithm
+Jarvis how do black holes evaporate
+
+If command matching fails:
+
+ask_ai(raw)
+
+runs automatically.
+
+So technically…
+the assistant can respond to almost ANY question now.
+
+🎤 VOICE ACTIVATION COMMANDS
+
+Wake words:
+
+“Jarvis”
+“J.A.R.V.I.S.”
+“Hey Jarvis”
+🔥 MOST POWERFUL COMMAND CHAINS
+
+You can also chain behavior mentally like:
+
+Jarvis open vscode
+Jarvis open chrome
+Jarvis save session coding
+
+Then tomorrow:
+
+Jarvis restore session coding
+
+and BOOM:
+entire workspace restored.
 📁 Project Structure
 JARVIS/
 │
@@ -225,6 +573,8 @@ Iron Man
 J.A.R.V.I.S.
 futuristic AI systems
 local-first AI tooling
+
+
 ⭐ Final Note
 
 This project started as a simple assistant idea and evolved into a fully interactive desktop AI environment.
